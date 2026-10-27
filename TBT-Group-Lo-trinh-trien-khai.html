@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Base x TBT Group - Lộ trình triển khai</title>
+<script src="./support.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  :root{
+    --bg:#ffffff;
+    --surface:#ffffff;
+    --surface-2:#fdeef3;
+    --line:#f3d6e2;
+    --ink:#2a2f3a;
+    --ink-muted:#6b7280;
+    --accent:#f2a4c0;
+    --accent-text:#a8436b;
+    --accent-ink:#3a0f22;
+    --accent-soft:#fde8ef;
+    --petal:#f7b8ce;
+    --petal-2:#f29bbd;
+    --sky-top:rgba(150,205,240,.4);
+    --sky-bottom:rgba(150,205,240,0);
+    --good:#2f8f5f;
+    --good-bg:#e1f3e8;
+    --pending:#9c6b3c;
+    --pending-bg:#f3e6d2;
+    --danger:#c23b3b;
+  }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:'Work Sans', system-ui, sans-serif; }
+  h1,h2,h3,.disp{ font-family:'Fraunces', Georgia, serif; }
+  a{ color:var(--accent-text); } a:hover{ color:var(--accent-ink); }
+  input[type="checkbox"]{ accent-color:var(--good); width:20px; height:20px; flex:none; margin-top:1px; cursor:pointer; }
+  .task-label{ cursor:pointer; }
+</style>
+</helmet>
+
+<div style="width:100%; min-height:100vh; box-sizing:border-box; display:flex; flex-direction:column; align-items:stretch; background:linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 520px, var(--bg) 520px);">
+
+  <!-- ===== Header ===== -->
+  <header style="width:100%; box-sizing:border-box; border-bottom:1px solid var(--line);">
+    <div style="max-width:1180px; margin:0 auto; padding:20px 32px; box-sizing:border-box; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <img src="/_blob/7a95cd6ad3a9bc92610b2b4544a80c51" alt="Logo TBT Group" style="height:38px; width:auto; display:block;">
+      <div style="width:1px; height:26px; background:var(--line);"></div>
+      <span style="font-family:'Fraunces',serif; font-weight:600; font-size:17px; color:var(--ink);">Base &times; TBT Group</span>
+      <span style="flex:1 1 auto; min-width:12px;"></span>
+      <span style="font-size:13px; font-weight:500; color:var(--ink-muted);">Dự án chuyển đổi số &middot; Base HRM</span>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section style="width:100%; box-sizing:border-box;">
+    <div style="max-width:1180px; margin:0 auto; padding:40px 32px 0; box-sizing:border-box;">
+      <div style="background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:0 18px 40px -26px rgba(168,67,107,0.28); padding:34px 40px; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:space-between;">
+
+        <div style="flex:3 1 440px; min-width:280px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--surface-2); color:var(--accent-text); font-weight:600; font-size:12px; letter-spacing:0.08em; padding:6px 12px; border-radius:999px; margin-bottom:14px;">
+            LỘ TRÌNH TRIỂN KHAI
+          </div>
+          <h1 style="margin:0 0 16px; font-size:28px; line-height:1.3; font-weight:600; color:var(--ink);">
+            Base &times; TBT Group &ndash; Lộ trình triển khai
+          </h1>
+
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <div style="display:flex; align-items:flex-start; gap:10px; background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:12px 14px; min-width:200px; flex:1 1 220px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none; margin-top:1px; color:var(--accent-text);"><path d="M3 10h18M7 3v4M17 3v4M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <div style="font-size:11px; font-weight:600; color:var(--accent-text); letter-spacing:0.05em;">THỜI GIAN</div>
+                <div style="font-size:13.5px; font-weight:600; color:var(--ink); margin-top:2px;">27/10 &ndash; 30/11/2026</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:10px; background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:12px 14px; min-width:240px; flex:1.4 1 280px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none; margin-top:1px; color:var(--accent-text);"><path d="M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3.27 6.96 12 12l8.73-5.04M12 22.08V12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <div>
+                <div style="font-size:11px; font-weight:600; color:var(--accent-text); letter-spacing:0.05em;">GÓI GIẢI PHÁP</div>
+                <div style="font-size:13.5px; font-weight:600; color:var(--ink); margin-top:2px;">Base Digital Workplace &ndash; Basic</div>
+                <div style="font-size:12px; color:var(--ink-muted); margin-top:1px;">Base Work+, Base Info+, Base HRM+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:1 1 170px; display:flex; flex-direction:column; align-items:center; gap:10px; min-width:150px;">
+          <div style="width:122px; height:122px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:{{ringBg}};">
+            <div style="width:96px; height:96px; border-radius:50%; background:var(--surface); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+              <span style="font-size:25px; font-weight:600; color:var(--accent-text); font-family:'Fraunces',serif;">{{overallPct}}%</span>
+              <span style="font-size:10px; font-weight:600; color:var(--ink-muted); letter-spacing:0.04em;">HOÀN THÀNH</span>
+            </div>
+          </div>
+          <span style="font-size:12.5px; color:var(--ink-muted); font-weight:500;">{{overallDone}}/{{overallTotal}} đầu việc</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1180px; width:100%; margin:0 auto; padding:40px 32px 100px; box-sizing:border-box; display:flex; flex-direction:column; gap:56px;">
+
+    <!-- ===== 01 Mục tiêu triển khai ===== -->
+    <section>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:18px;">
+        <span style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:0.08em;">01</span>
+        <h2 style="margin:0; font-size:21px; font-weight:600; color:var(--ink);">Mục tiêu triển khai</h2>
+      </div>
+
+      <div style="background:var(--surface); border:2px solid var(--accent); border-radius:16px; padding:32px 36px; display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="flex:none; width:40px; height:40px; border-radius:50%; background:var(--accent-text); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; font-family:'Fraunces',serif;">1</div>
+          <p style="margin:8px 0 0; font-size:16px; line-height:1.55; font-weight:600; color:var(--ink);">Bảng lương khối Hành chính &ndash; Kế toán được triển khai &amp; chạy chính xác trên Base</p>
+        </div>
+        <div style="height:1px; background:var(--line);"></div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="flex:none; width:40px; height:40px; border-radius:50%; background:var(--accent-text); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; font-family:'Fraunces',serif;">2</div>
+          <p style="margin:8px 0 0; font-size:16px; line-height:1.55; font-weight:600; color:var(--ink);">Bảng công khối Hành chính &ndash; Kế toán được phân ca &amp; tự động tính toán chính xác trên Base</p>
+        </div>
+        <div style="height:1px; background:var(--line);"></div>
+        <div style="display:flex; align-items:flex-start; gap:16px;">
+          <div style="flex:none; width:40px; height:40px; border-radius:50%; background:var(--accent-text); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; font-family:'Fraunces',serif;">3</div>
+          <p style="margin:8px 0 0; font-size:16px; line-height:1.55; font-weight:600; color:var(--ink);">Bộ Quy trình key của khối Hành chính &ndash; Kế toán &amp; Công nghệ thông tin được thiết lập &amp; áp dụng trong nội bộ dự án</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 Các mốc triển khai ===== -->
+    <section>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:18px;">
+        <span style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:0.08em;">02</span>
+        <h2 style="margin:0; font-size:21px; font-weight:600; color:var(--ink);">Các mốc triển khai dự kiến</h2>
+      </div>
+
+      <!-- Gantt -->
+      <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:28px 30px 20px; margin-bottom:22px;">
+        <div style="display:grid; grid-template-columns:112px 1fr; row-gap:14px; column-gap:18px; align-items:center;">
+
+          <span style="font-size:13px; font-weight:600; color:var(--ink);">Chặng 1</span>
+          <div style="position:relative; height:38px;">
+            <div style="position:absolute; left:0; top:0; width:26.5%; height:100%; background:var(--accent); border-radius:9px; display:flex; align-items:center; padding:0 10px; box-sizing:border-box;">
+              <span style="font-size:11.5px; font-weight:600; color:var(--accent-ink); white-space:nowrap;">27/10 &rarr; 05/11</span>
+            </div>
+          </div>
+
+          <span style="font-size:13px; font-weight:600; color:var(--ink);">Chặng 2</span>
+          <div style="position:relative; height:38px;">
+            <div style="position:absolute; left:26.5%; top:0; width:73.5%; height:100%; background:var(--accent-text); border-radius:9px; display:flex; align-items:center; padding:0 10px; box-sizing:border-box;">
+              <span style="font-size:11.5px; font-weight:600; color:#fff; white-space:nowrap;">05/11 &rarr; 30/11</span>
+            </div>
+          </div>
+
+          <span></span>
+          <div style="position:relative; height:52px; margin-top:4px;">
+            <div style="position:absolute; left:0; right:0; top:28px; height:2px; background:var(--line);"></div>
+            <div style="position:absolute; left:0; top:22px; width:2px; height:14px; background:var(--line);"></div>
+            <div style="position:absolute; left:26.5%; top:22px; width:2px; height:14px; background:var(--line); transform:translateX(-1px);"></div>
+            <div style="position:absolute; right:0; top:22px; width:2px; height:14px; background:var(--line);"></div>
+            <span style="position:absolute; left:0; top:38px; font-size:11px; color:var(--ink-muted); font-weight:600;">27/10</span>
+            <span style="position:absolute; left:26.5%; top:38px; transform:translateX(-50%); font-size:11px; color:var(--ink-muted); font-weight:600;">05/11</span>
+            <span style="position:absolute; right:0; top:38px; font-size:11px; color:var(--ink-muted); font-weight:600;">30/11</span>
+
+            <div style="position:absolute; left:26.5%; top:-6px; transform:translateX(-50%) rotate(-7deg); background:var(--danger); color:#fff; font-size:9.5px; font-weight:700; letter-spacing:0.06em; padding:4px 8px; border-radius:5px; border:1.5px solid rgba(255,255,255,0.85); box-shadow:0 3px 8px -2px rgba(194,59,59,0.55); white-space:nowrap;">GO-LIVE</div>
+            <div style="position:absolute; right:0; top:-6px; transform:rotate(-7deg); background:var(--danger); color:#fff; font-size:9.5px; font-weight:700; letter-spacing:0.06em; padding:4px 8px; border-radius:5px; border:1.5px solid rgba(255,255,255,0.85); box-shadow:0 3px 8px -2px rgba(194,59,59,0.55); white-space:nowrap;">GO-LIVE</div>
+          </div>
+
+        </div>
+      </div>
+
+      <p style="margin:0 0 18px; font-size:13.5px; color:var(--ink-muted);">Tick từng đầu việc khi hoàn thành &mdash; tiến độ của chặng và tiến độ tổng sẽ tự cập nhật.</p>
+
+      <div style="display:flex; align-items:stretch; gap:0; flex-wrap:wrap;">
+
+        <!-- Chặng 1 progress -->
+        <div style="flex:1 1 420px; min-width:300px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:26px 26px 22px; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:38px; height:38px; border-radius:10px; background:var(--accent-ink); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; font-family:'Fraunces',serif;">01</div>
+              <div>
+                <h3 style="margin:0; font-size:16px; font-weight:600; color:var(--ink);">Hoàn thiện bảng công &amp; bảng lương</h3>
+                <span style="font-size:12.5px; color:var(--ink-muted); font-weight:500;">Khối Hành chính &ndash; Kế toán</span>
+              </div>
+            </div>
+            <span style="flex:none; font-size:12px; font-weight:600; color:var(--accent-text); background:var(--surface-2); padding:5px 10px; border-radius:999px; white-space:nowrap;">Go-live 05/11</span>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted);">Tiến độ chặng 1</span>
+              <span style="font-size:12px; font-weight:600; color:var(--accent-text);">{{phase1Pct}}%</span>
+            </div>
+            <div style="width:100%; height:8px; border-radius:999px; background:var(--line); overflow:hidden;">
+              <div style="height:100%; border-radius:999px; background:var(--accent); width:{{phase1Pct}}%;"></div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <sc-for list="{{phase1Tasks}}" as="item" hint-placeholder-count="4">
+              <label class="task-label" for="chk-{{item.id}}" style="display:flex; align-items:flex-start; gap:12px; padding:10px 10px; border-radius:9px; {{item.rowStyle}}">
+                <input type="checkbox" id="chk-{{item.id}}" checked="{{item.done}}" onChange="{{item.onToggle}}">
+                <span style="flex:1 1 auto; font-size:13.5px; line-height:1.5; {{item.textStyle}}">{{item.label}}</span>
+                <span style="flex:none; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px; {{item.picStyle}}">{{item.pic}}</span>
+              </label>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- Connector -->
+        <div style="flex:0 0 56px; display:flex; align-items:center; justify-content:center; min-height:60px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="color:var(--accent-text);"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Chặng 2 progress -->
+        <div style="flex:1 1 420px; min-width:300px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:26px 26px 22px; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:38px; height:38px; border-radius:10px; background:var(--accent-text); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; font-family:'Fraunces',serif;">02</div>
+              <div>
+                <h3 style="margin:0; font-size:16px; font-weight:600; color:var(--ink);">Mở rộng HRM+ &amp; triển khai Work+</h3>
+                <span style="font-size:12.5px; color:var(--ink-muted); font-weight:500;">Khối CNTT &amp; Hành chính &ndash; Kế toán</span>
+              </div>
+            </div>
+            <span style="flex:none; font-size:12px; font-weight:600; color:var(--accent-text); background:var(--surface-2); padding:5px 10px; border-radius:999px; white-space:nowrap;">Go-live 30/11</span>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted);">Tiến độ chặng 2</span>
+              <span style="font-size:12px; font-weight:600; color:var(--accent-text);">{{phase2Pct}}%</span>
+            </div>
+            <div style="width:100%; height:8px; border-radius:999px; background:var(--line); overflow:hidden;">
+              <div style="height:100%; border-radius:999px; background:var(--accent-text); width:{{phase2Pct}}%;"></div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <sc-for list="{{phase2Tasks}}" as="item" hint-placeholder-count="7">
+              <label class="task-label" for="chk-{{item.id}}" style="display:flex; align-items:flex-start; gap:12px; padding:10px 10px; border-radius:9px; {{item.rowStyle}}">
+                <input type="checkbox" id="chk-{{item.id}}" checked="{{item.done}}" onChange="{{item.onToggle}}">
+                <span style="flex:1 1 auto; font-size:13.5px; line-height:1.5; {{item.textStyle}}">{{item.label}}</span>
+                <span style="flex:none; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px; {{item.picStyle}}">{{item.pic}}</span>
+              </label>
+            </sc-for>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 03 Các buổi làm việc cụ thể ===== -->
+    <section>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:18px;">
+        <span style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:0.08em;">03</span>
+        <h2 style="margin:0; font-size:21px; font-weight:600; color:var(--ink);">Các buổi làm việc cụ thể</h2>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:18px;">
+
+        <!-- Buổi 3 -->
+        <div style="flex:1 1 360px; min-width:300px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:24px 26px; display:flex; flex-direction:column; gap:14px;">
+          <span style="align-self:flex-start; font-size:12px; font-weight:600; color:var(--accent-text); background:var(--surface-2); padding:5px 11px; border-radius:999px;">Buổi 3 &middot; Thứ 4, 28/10/2026</span>
+          <h3 style="margin:0; font-size:16px; font-weight:600; color:var(--ink);">Khảo sát nghiệp vụ &amp; Thiết lập bộ Quản trị Công việc</h3>
+
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div>
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted); letter-spacing:0.03em;">1. Mục tiêu</span>
+              <p style="margin:4px 0 0; font-size:13.5px; color:var(--ink); line-height:1.55;">4 nghiệp vụ được khảo sát &amp; thiết lập lên hệ thống</p>
+            </div>
+            <div>
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted); letter-spacing:0.03em;">2. Thành phần tham dự</span>
+              <ul style="margin:4px 0 0; padding-left:18px; font-size:13.5px; color:var(--ink); line-height:1.65;">
+                <li>Phần 1: Hành chính &ndash; Kế toán</li>
+                <li>Phần 2: Công nghệ thông tin</li>
+              </ul>
+            </div>
+            <div>
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted); letter-spacing:0.03em;">3. Yêu cầu chuẩn bị</span>
+              <ul style="margin:4px 0 0; padding-left:18px; font-size:13.5px; color:var(--ink); line-height:1.65;">
+                <li>Tài liệu về quy trình, nghiệp vụ cần chuyển đổi lên hệ thống</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buổi 2 -->
+        <div style="flex:1 1 360px; min-width:300px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:24px 26px; display:flex; flex-direction:column; gap:14px;">
+          <span style="align-self:flex-start; font-size:12px; font-weight:600; color:var(--accent-text); background:var(--surface-2); padding:5px 11px; border-radius:999px;">Buổi 2 &middot; Thứ 6, 30/10/2026</span>
+          <h3 style="margin:0; font-size:16px; font-weight:600; color:var(--ink);">Chạy thử bảng lương T10</h3>
+
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div>
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted); letter-spacing:0.03em;">1. Mục tiêu</span>
+              <p style="margin:4px 0 0; font-size:13.5px; color:var(--ink); line-height:1.55;">Chạy thử thành công bảng lương tháng 10 của khối Hành chính &ndash; Kế toán trên Base</p>
+            </div>
+            <div>
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted); letter-spacing:0.03em;">2. Thành phần tham dự</span>
+              <ul style="margin:4px 0 0; padding-left:18px; font-size:13.5px; color:var(--ink); line-height:1.65;">
+                <li>Khối Hành chính &ndash; Kế toán</li>
+              </ul>
+            </div>
+            <div>
+              <span style="font-size:12px; font-weight:600; color:var(--ink-muted); letter-spacing:0.03em;">3. Yêu cầu chuẩn bị</span>
+              <ul style="margin:4px 0 0; padding-left:18px; font-size:13.5px; color:var(--ink); line-height:1.65;">
+                <li>Dữ liệu chấm công &amp; đơn xin nghỉ đầy đủ trên hệ thống</li>
+                <li>Bảng lương đã setup theo mẫu thực tế</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 04 Phương pháp phối hợp ===== -->
+    <section>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+        <span style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:0.08em;">04</span>
+        <h2 style="margin:0; font-size:21px; font-weight:600; color:var(--ink);">Phương pháp phối hợp</h2>
+      </div>
+      <p style="margin:0 0 22px; font-size:13.5px; color:var(--ink-muted); max-width:700px;">Với quy mô 15&ndash;30 người, dự án đi theo hướng bàn giao gọn: đội chuyên viên trực tiếp cấu hình hệ thống, sau đó hướng dẫn thao tác để TBT Group tự làm chủ và vận hành độc lập.</p>
+
+      <div style="display:flex; align-items:center; gap:0; flex-wrap:wrap;">
+
+        <div style="flex:1 1 220px; min-width:200px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:46px; height:46px; border-radius:50%; background:var(--accent-ink); color:#fff; display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.66 5.66L4 17v3h3l5.04-5.04a4 4 0 0 0 5.66-5.66l-2.12 2.12-2.12-2.12 2.24-2.24Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin:0; font-size:14.5px; font-weight:600; color:var(--ink);">Bàn giao công nghệ</h3>
+          <p style="margin:0; font-size:12.5px; line-height:1.55; color:var(--ink-muted);">Chuyên viên trực tiếp cấu hình, setup hệ thống theo đúng nghiệp vụ thực tế.</p>
+        </div>
+
+        <div style="flex:0 0 40px; display:flex; align-items:center; justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="color:var(--line);"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div style="flex:1 1 220px; min-width:200px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:46px; height:46px; border-radius:50%; background:var(--accent-text); color:#fff; display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin:0; font-size:14.5px; font-weight:600; color:var(--ink);">Bàn giao thao tác</h3>
+          <p style="margin:0; font-size:12.5px; line-height:1.55; color:var(--ink-muted);">Hướng dẫn cách setup, chỉnh sửa trực tiếp trên hệ thống cho đội phụ trách.</p>
+        </div>
+
+        <div style="flex:0 0 40px; display:flex; align-items:center; justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="color:var(--line);"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div style="flex:1 1 220px; min-width:200px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:46px; height:46px; border-radius:50%; background:var(--good); color:#fff; display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin:0; font-size:14.5px; font-weight:600; color:var(--ink);">Tự chủ vận hành</h3>
+          <p style="margin:0; font-size:12.5px; line-height:1.55; color:var(--ink-muted);">Doanh nghiệp tự thao tác, tự điều chỉnh hệ thống sau khi dự án kết thúc.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 05 Tài liệu tham khảo ===== -->
+    <section>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:18px;">
+        <span style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:0.08em;">05</span>
+        <h2 style="margin:0; font-size:21px; font-weight:600; color:var(--ink);">Tài liệu tham khảo</h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="https://docs.google.com/spreadsheets/d/1pLppf-sgC-Yl87XcsXdBYrXacTMC-KuDb78r9FBXcBE/edit?gid=229032097#gid=229032097" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 20px; text-decoration:none; color:var(--ink);">
+          <div style="flex:none; width:38px; height:38px; border-radius:10px; background:var(--surface-2); color:var(--accent-text); display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span style="flex:1 1 auto; font-size:14px; font-weight:600;">Base x TBT | Lộ trình triển khai</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none; color:var(--ink-muted);"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://docs.google.com/spreadsheets/d/1mp4YXG5wzEKN7x2bGJ95OtLimAJNHXX9TXGYO-M3pnc/edit?gid=1274418436#gid=1274418436" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 20px; text-decoration:none; color:var(--ink);">
+          <div style="flex:none; width:38px; height:38px; border-radius:10px; background:var(--surface-2); color:var(--accent-text); display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span style="flex:1 1 auto; font-size:14px; font-weight:600;">Base x TBT | Chuẩn bị dữ liệu HRM+</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none; color:var(--ink-muted);"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== 06 Kênh liên lạc ===== -->
+    <section>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:18px;">
+        <span style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:0.08em;">06</span>
+        <h2 style="margin:0; font-size:21px; font-weight:600; color:var(--ink);">Kênh liên lạc</h2>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px 26px;">
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:16px 0; border-bottom:1px solid var(--line);">
+          <div style="flex:none; width:26px; height:26px; border-radius:50%; background:var(--surface-2); color:var(--accent-text); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">1</div>
+          <p style="margin:2px 0 0; font-size:13.5px; line-height:1.6; color:var(--ink);">Chuẩn bị dữ liệu trên hệ thống &mdash; truy cập 2 đường link Google Sheet tại phần <strong>Tài liệu tham khảo</strong></p>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:16px 0; border-bottom:1px solid var(--line);">
+          <div style="flex:none; width:26px; height:26px; border-radius:50%; background:var(--surface-2); color:var(--accent-text); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">2</div>
+          <p style="margin:2px 0 0; font-size:13.5px; line-height:1.6; color:var(--ink);">Lộ trình triển khai &amp; mục tiêu các buổi &mdash; đường link bạn đang truy cập</p>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:14px; padding:16px 0;">
+          <div style="flex:none; width:26px; height:26px; border-radius:50%; background:var(--surface-2); color:var(--accent-text); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">3</div>
+          <p style="margin:2px 0 0; font-size:13.5px; line-height:1.6; color:var(--ink);">Cập nhật tổng kết nội dung các buổi làm việc &mdash; Base Wework &amp; Base Lịch</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer note ===== -->
+    <section style="background:var(--surface-2); border-radius:12px; padding:18px 22px; display:flex; align-items:flex-start; gap:12px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none; margin-top:1px; color:var(--accent-text);"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <p style="margin:0; font-size:12.5px; line-height:1.6; color:var(--accent-ink);">Đây là bản lộ trình sống &mdash; nội dung từng đầu việc, mốc thời gian có thể được chỉnh sửa trực tiếp khi dự án phát sinh thay đổi. Tiến độ % được tính tự động theo số đầu việc đã tick, lưu trên trình duyệt đang xem.</p>
+    </section>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1320,"height":1600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { checked: {} };
+  }
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem('tbt-roadmap-progress-v1');
+      if (raw) {
+        this.setState({ checked: JSON.parse(raw) });
+      }
+    } catch (e) {}
+  }
+  toggle(id) {
+    const checked = { ...this.state.checked, [id]: !this.state.checked[id] };
+    this.setState({ checked });
+    try {
+      localStorage.setItem('tbt-roadmap-progress-v1', JSON.stringify(checked));
+    } catch (e) {}
+  }
+  renderVals() {
+    const self = this;
+    const mk = (id, label, pic) => {
+      const done = !!self.state.checked[id];
+      const picText = pic || '';
+      let picStyle = 'display:none;';
+      if (pic === 'Base') {
+        picStyle = 'background:#f3e6d2; color:#9c6b3c; border:1px solid #9c6b3c;';
+      } else if (pic === 'TBT') {
+        picStyle = 'background:#fde8ef; color:#a8436b; border:1px solid #f2a4c0;';
+      }
+      return {
+        id,
+        label,
+        done,
+        pic: picText,
+        picStyle,
+        onToggle: () => self.toggle(id),
+        rowStyle: done
+          ? 'border:1px solid #2f8f5f; background:#e1f3e8;'
+          : 'border:1px solid #f3d6e2; background:transparent;',
+        textStyle: done ? 'text-decoration: line-through; color:#6b7280;' : 'color:#2a2f3a;'
+      };
+    };
+
+    const phase1Tasks = [
+      mk('p1-1', 'Hoàn thiện hồ sơ nhân sự khối Hành chính - Kế toán trên Base', 'Base'),
+      mk('p1-2', 'Thiết lập chấm công, đơn xin nghỉ, phân ca & quản lý công - khối HCKT và CNTT', 'TBT'),
+      mk('p1-3', 'Setup bảng lương trên Base', 'Base'),
+      mk('p1-4', 'Chuẩn bị dữ liệu chấm công & bảng công tính toán ngoài hệ thống', 'TBT')
+    ];
+
+    const phase2Tasks = [
+      mk('p2-1', 'Thiết lập nghiệp vụ #1 - Hành chính Kế toán', 'Base'),
+      mk('p2-2', 'Thiết lập nghiệp vụ #2 - Hành chính Kế toán', 'Base'),
+      mk('p2-3', 'Thiết lập nghiệp vụ #1 - Công nghệ thông tin', 'Base'),
+      mk('p2-4', 'Thiết lập nghiệp vụ #2 - Công nghệ thông tin', 'Base'),
+      mk('p2-5', 'Thiết lập bổ sung tối thiểu 3 nghiệp vụ trên Base', 'TBT'),
+      mk('p2-6', 'Bảng công tự động tính toán theo dữ liệu chấm công & đơn từ trên Base', null),
+      mk('p2-7', 'Bảng lương khối HCKT & CNTT tính toán tự động từ dữ liệu chấm công', null)
+    ];
+
+    const allItems = [...phase1Tasks, ...phase2Tasks];
+    const pct = (items) => items.length ? Math.round(100 * items.filter(i => i.done).length / items.length) : 0;
+
+    const overallPct = pct(allItems);
+    const overallDone = allItems.filter(i => i.done).length;
+
+    return {
+      phase1Tasks, phase2Tasks,
+      phase1Pct: pct(phase1Tasks),
+      phase2Pct: pct(phase2Tasks),
+      overallPct,
+      overallDone,
+      overallTotal: allItems.length,
+      ringBg: `conic-gradient(#f2a4c0 0% ${overallPct}%, #f3d6e2 ${overallPct}% 100%)`
+    };
+  }
+}
+</script>
+</body>
+</html>
